@@ -329,6 +329,11 @@ namespace PB {
    String      convert(c8* to_convert){ ret String(); };
    String      convert(const c8* to_convert) { ret String(); };
    String      convert(std::string to_convert) { ret String(); };
-   String      convert(c16* to_convert) { ret String(); };
+   String      convert(c16* to_convert) { ret String(); }
+   String remove(Charackters charackterset, String string)
+   {
+	   return String();
+   }
+   ;
    
 }

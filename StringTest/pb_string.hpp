@@ -147,6 +147,6 @@ namespace PB {
    String      convert(c16* to_convert);
 
 
-   String      remove_charackters_by(Charackters charackterset, String string);
+   String      remove(Charackters charackterset, String string);
 }
 

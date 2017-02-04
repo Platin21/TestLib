@@ -13,6 +13,8 @@ int main(int argc, char* argv[])
 	String t2 = right(t1,4);
 	String t3 = left(t1,4);
 
+	i8 t4 = 0;
+
 	clear(t1);
 	clear(t2);
 	clear(t3);

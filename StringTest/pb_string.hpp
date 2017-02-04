@@ -35,7 +35,7 @@ namespace PB {
 
 		   text -= count;
 
-		   for (i64 i = count; i < count; ++i)
+		   for (i64 i = 0; i < count; ++i)
 		   {
 			   *data++ = *text++;
 		   }

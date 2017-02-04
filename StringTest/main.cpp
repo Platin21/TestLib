@@ -9,6 +9,10 @@ int main(int argc, char* argv[])
 {
 	char* t = "test";
 	
+	String t0 = String(t,4);
+
+	String tarray[] = { "23","23","23" };
+
 	String t1("aäbcdfghijklnmoöpqrsßtuüvwxyz");
 	String t2 = right(t1,4);
 	String t3 = left(t1,4);
@@ -18,4 +22,8 @@ int main(int argc, char* argv[])
 	clear(t1);
 	clear(t2);
 	clear(t3);
+	clear(t0);
+	clear(tarray[0]);
+	clear(tarray[1]);
+	clear(tarray[2]);
 }

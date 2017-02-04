@@ -65,6 +65,19 @@ namespace PB {
 		   this->data -= this->lenght;
 	   }
 
+	   String(char* text,i64 size)
+	   {
+		   this->lenght = size;
+		   this->ptr = memory_allocte_zero(size);
+		   this->data = (c8*)this->ptr;
+		   
+	   	   for (i64 i = 0; i < size; ++i)
+		   {
+			   *data++ = *text++;
+		   }
+		   this->data -= this->lenght;
+	   }
+
    };
 	
    struct String_Cordinate

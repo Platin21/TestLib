@@ -13,4 +13,5 @@ int main(int argc, char* argv[])
 
 	PB::clear(t1);
 	PB::clear(t2);
+	PB::clear(t3);
 }

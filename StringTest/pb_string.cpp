@@ -285,7 +285,7 @@ namespace PB {
 
    String	   substr(String for_substr,i64 start,i64 end)
 			   {
-				  if( start > for_substr.lenght || end < start )
+				  if( start > for_substr.lenght || end < start || end > for_substr.lenght )
 				  {
 					 std::cout << "Error you can not make a Range with Neagtiv Index" << end;
 					 ret String();
@@ -296,9 +296,10 @@ namespace PB {
 				  string.ptr = memory_allocte_zero(size);
 				  string.data = (c8*) string.ptr;
 
-				  for_substr.data+=start;
+				  if(start != 0)
+					for_substr.data+=start;
 
-				  for(i64 i = start; i <= end; ++i )
+				  for(i64 i = 0; i < size; ++i )
 				  {
 					 *string.data++ = *for_substr.data++;
 				  }
@@ -310,14 +311,13 @@ namespace PB {
 
    String left(String string, i64 count)
    {
-	   i64 trimsize = string.lenght - count;
-	   ret substr(string,1,trimsize);
+	   ret substr(string,count,string.lenght);
    }
 
    String right(String string, i64 count)
    {
-	   i64 trimsize = string.lenght - count;
-	   ret substr(string, trimsize-1, string.lenght);
+	   i64 trimsize = (string.lenght - count);
+	   ret substr(string, trimsize, string.lenght);
    }
 
    String      replace(String to_replacein, String to_replace) { ret String(); };

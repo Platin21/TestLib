@@ -8,6 +8,18 @@
 
 namespace PB {
 
+	enum Charackters
+	{
+		WhiteSpace,
+		DoubleSlash,
+		NewLine,
+		Numbers,
+		Alpha,
+		Symbols,
+		Operators,
+		//#TODO Add more charackter sets!
+	};
+
    struct String
    {
 	   c8* data;
@@ -133,5 +145,8 @@ namespace PB {
    String      convert(const c8* to_convert);
    String      convert(std::string to_convert);
    String      convert(c16* to_convert);
+
+
+   String      remove_charackters_by(Charackters charackterset, String string);
 }
 

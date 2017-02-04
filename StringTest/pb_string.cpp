@@ -1,5 +1,6 @@
 #include "pb_string.hpp"
 
+//#TODO Make better a better comments 
 
 namespace PB {
 
@@ -309,11 +310,13 @@ namespace PB {
 				  ret string;
 			   }
 
+	//#INFO Trimms the String from left to count
    String left(String string, i64 count)
    {
 	   ret substr(string,count,string.lenght);
    }
 
+	//#INFO Trimms the string from right to count
    String right(String string, i64 count)
    {
 	   i64 trimsize = (string.lenght - count);

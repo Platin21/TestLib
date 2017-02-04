@@ -2,16 +2,18 @@
 #include "pb_string.hpp"
 #include <iostream>
 
+//Don't use it is Error prone! but in this test it is okey
+using namespace PB;
+
 int main(int argc, char* argv[])
 {
 	char* t = "test";
 	
-	PB::String t1("Test String this is! öä ");
+	String t1("aäbcdfghijklnmoöpqrsßtuüvwxyz");
+	String t2 = right(t1,4);
+	String t3 = left(t1,4);
 
-	auto t2 = PB::right(t1,4);
-	auto t3 = PB::left(t1,5);
-
-	PB::clear(t1);
-	PB::clear(t2);
-	PB::clear(t3);
+	clear(t1);
+	clear(t2);
+	clear(t3);
 }

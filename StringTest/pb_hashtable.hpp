@@ -17,9 +17,12 @@ namespace PB::HASH
 		ptr_c8 key;
 		ptr_Void binding;
 		bucket* next;
+		bucket* last;
 	};
 
 	extern bucket* table[PB_HASH_TABLE_SIZE];
+	extern bucket* last;
+
 
 	u32 hash(ptr_c8 s0);
 
@@ -31,6 +34,7 @@ namespace PB::HASH
 
 	Void pop(ptr_c8 key);
 
+	void clear();
 };
 
 

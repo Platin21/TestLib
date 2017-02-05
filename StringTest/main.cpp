@@ -35,7 +35,15 @@ int main(int argc, char* argv[])
 	*/
 
 	STR::String t1(u8"FileIsFile");
+
+
+	HASH::insert("test", &t1);
+	HASH::insert("test2", &t1);
+	HASH::insert("test3", &t1);
+
+	HASH::clear();
 	STR::clear(t1);
+
 
 	ret 0;
 }

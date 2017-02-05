@@ -37,6 +37,7 @@ namespace PB::HASH
 	}
 
 	bucket* table[PB_HASH_TABLE_SIZE];
+	bucket* last = nullptr;
 
 	u32 hash(ptr_c8 s0)
 	{
@@ -51,6 +52,8 @@ namespace PB::HASH
 		b->key = key;
 		b->binding = binding;
 		b->next = next;
+		b->last = last;
+		last = b;
 		ret b;
 	}
 
@@ -80,7 +83,36 @@ namespace PB::HASH
 	{
 		int index = hash(key) % PB_HASH_TABLE_SIZE;
 		auto ptr = table[index];
+		table[index]->next->last = table[index]->last;
 		table[index] = table[index]->next;
 		RAM::clear(ptr);
 	}
+
+
+	//#TODO Fix Free of the Hashtable!
+	void clear()
+	{
+		bucket *b1;
+		bucket *b2;
+
+		b1 = last;
+
+		while( b1->last != nullptr )
+		{
+			b1 = b1->last;
+		}
+
+		do
+		{
+			b2 = b1;
+			b1 = b1->next;
+			RAM::clear(b2);
+			if(!b1)
+			{
+				break;
+			}
+		} while (b1->next != nullptr);
+
+	}
+
 };

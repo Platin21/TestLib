@@ -9,7 +9,8 @@
 
 //TODO Use allocater from pb_types.hpp and use pool!
 
-namespace PB {
+namespace PB::STR 
+{
 
 	enum Charackters
 	{
@@ -149,6 +150,9 @@ namespace PB {
    String      convert(std::string to_convert);
    String      convert(c16* to_convert);
 
+
+   bl		   compare(String com1, String com2);
+   
 
    String      remove(Charackters charackterset, String string);
 }

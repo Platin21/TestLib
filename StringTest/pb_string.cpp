@@ -2,7 +2,8 @@
 
 //#TODO Make better a better comments 
 
-namespace PB {
+namespace PB::STR 
+{
 
    //Keep Copying at least from bottom !
    // and its done! @NOTE Test if it works whit std::string !
@@ -330,10 +331,35 @@ namespace PB {
    String      convert(const c8* to_convert) { ret String(); };
    String      convert(std::string to_convert) { ret String(); };
    String      convert(c16* to_convert) { ret String(); }
+
+   bl		   compare(String com1,String com2)
+   {
+	   if(com1.lenght != com2.lenght) ret false;
+	   bl result = false;
+		
+	   i64 iter = 0;
+	   while( *com1.data == *com2.data )
+	   {
+		   ++com1.data;
+		   ++com2.data;
+		   ++iter;
+		   if (iter == com1.lenght) result = true;
+	   }
+	   com1.data -= iter;
+	   com2.data -= iter;
+
+	   ret result;
+   };
+
    String remove(Charackters charackterset, String string)
    {
 	   return String();
-   }
-   ;
+   };
    
 }
+
+/*
+ *  var a : bl = true;
+ *  a!; 
+ *  print(a); ?> Outputs false;
+ */

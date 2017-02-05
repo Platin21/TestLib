@@ -1,7 +1,7 @@
 #include "pb_types.hpp"
 #include "pb_string.hpp"
-#include "Windows.h"
-#include "pb_memmory.hpp"
+//#include "Windows.h"
+//#include "pb_memmory.hpp"
 
 //Don't use it is Error prone! but in this test it is okey
 using namespace PB;
@@ -33,5 +33,5 @@ int main(int argc, char* argv[])
 	clear(t0);
 	*/
 
-	RAM::allocate(40);
+	//RAM::allocate(40);
 }

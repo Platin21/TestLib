@@ -12,7 +12,7 @@ namespace PB::RAM
 
 	ptr_Void allocate(i64 size)
 	{
-		ret HeapAlloc(GetProcessHeap(), 0, size);
+		ret HeapAlloc(GetProcessHeap(), HEAP_NO_SERIALIZE, size);
 	}
 
 	ptr_Void advance(ptr_c8 & ptr, r_i64 bytes)
@@ -23,6 +23,12 @@ namespace PB::RAM
 	ptr_Void regess(ptr_c8 & ptr, r_i64 bytes)
 	{
 		ret(ptr -= bytes);
+	}
+
+	bl clear(ptr_Void to_sclear)
+	{
+		HeapFree(GetProcessHeap(), HEAP_NO_SERIALIZE, to_sclear);
+		ret true;
 	}
 
 	ptr_Void Pool()

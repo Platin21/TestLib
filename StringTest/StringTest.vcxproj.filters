@@ -21,6 +21,12 @@
     <ClInclude Include="pb_types.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="pb_memmory.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="pb_hashtable.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pb_string.cpp">
@@ -30,6 +36,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="pb_memmory.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="pb_hashtable.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,12 +1,14 @@
 #include "pb_types.hpp"
 #include "pb_string.hpp"
 #include "Windows.h"
+#include "pb_memmory.hpp"
 
 //Don't use it is Error prone! but in this test it is okey
 using namespace PB;
 
 int main(int argc, char* argv[])
 {
+	/*
 	char* t = "test";
 	
 	String t0 = String(argv[0],50);
@@ -29,4 +31,7 @@ int main(int argc, char* argv[])
 	clear(t2);
 	clear(t3);
 	clear(t0);
+	*/
+
+	RAM::allocate(40);
 }

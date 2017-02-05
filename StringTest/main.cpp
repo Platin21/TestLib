@@ -35,14 +35,7 @@ int main(int argc, char* argv[])
 	*/
 
 	STR::String t1(u8"FileIsFile");
+	STR::clear(t1);
 
-	bl test = HASH::cstr_compare("test", "test");
-	
-	HASH::insert("key1",&t1);
-
-	auto t2 = (STR::String*)HASH::lookup("key1");
-
-	clear(t1);
-
-	//RAM::allocate(40);
+	ret 0;
 }

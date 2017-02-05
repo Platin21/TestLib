@@ -37,8 +37,6 @@ namespace PB::HASH
 	}
 
 	bucket* table[PB_HASH_TABLE_SIZE];
-	i64	 indexTable[PB_HASH_TABLE_SIZE];
-	i64  iterator = 0;
 
 	u32 hash(ptr_c8 s0)
 	{
@@ -60,7 +58,6 @@ namespace PB::HASH
 	Void insert(ptr_c8 key, ptr_Void binding)
 	{
 		i32 index = hash(key) % PB_HASH_TABLE_SIZE;
-		indexTable[iterator++] = index;
 		table[index] = Bucket(key, binding, table[index]);
 	}
 

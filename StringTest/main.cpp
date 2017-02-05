@@ -43,7 +43,6 @@ int main(int argc, char* argv[])
 	auto t2 = (STR::String*)HASH::lookup("key1");
 
 	clear(t1);
-	HASH::clear();
 
 	//RAM::allocate(40);
 }

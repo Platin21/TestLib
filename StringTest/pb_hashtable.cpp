@@ -37,6 +37,8 @@ namespace PB::HASH
 	}
 
 	bucket* table[PB_HASH_TABLE_SIZE];
+	i64	 indexTable[PB_HASH_TABLE_SIZE];
+	i64  iterator = 0;
 
 	u32 hash(ptr_c8 s0)
 	{
@@ -58,6 +60,7 @@ namespace PB::HASH
 	Void insert(ptr_c8 key, ptr_Void binding)
 	{
 		i32 index = hash(key) % PB_HASH_TABLE_SIZE;
+		indexTable[iterator++] = index;
 		table[index] = Bucket(key, binding, table[index]);
 	}
 
@@ -67,7 +70,10 @@ namespace PB::HASH
 		bucket* b;
 		for (b = table[index]; b; b = b->next)
 		{
-			if (false == cstr_compare(b->key, key)) ret b->binding;
+			if (true == cstr_compare(b->key, key))
+			{
+				ret b->binding;
+			}
 		}
 		ret ptr_Void();
 	};
@@ -79,16 +85,5 @@ namespace PB::HASH
 		auto ptr = table[index];
 		table[index] = table[index]->next;
 		RAM::clear(ptr);
-	}
-	bl clear()
-	{
-		for(i64 i = 0; i < PB_HASH_TABLE_SIZE; ++i )
-		{
-			if(table[i] != nullptr )
-			{
-				free(table[i]);
-			}
-		}
-		ret true;
 	}
 };

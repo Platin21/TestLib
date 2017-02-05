@@ -20,6 +20,8 @@ namespace PB::HASH
 	};
 
 	extern bucket* table[PB_HASH_TABLE_SIZE];
+	extern i64	   indexTable[PB_HASH_TABLE_SIZE];
+	extern i64     iterator;
 
 	u32 hash(ptr_c8 s0);
 

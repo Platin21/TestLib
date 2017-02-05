@@ -32,6 +32,8 @@ namespace PB::HASH
 		ret result;
 	}
 
+	bucket* table[PB_HASH_TABLE_SIZE];
+
 	u32 hash(ptr_c8 s0)
 	{
 		u32 h = 0; ptr_c8 s;
@@ -49,13 +51,13 @@ namespace PB::HASH
 	}
 
 
-	Void insert(ptr_c8 key, ptr_Void binding,bucket* table[] )
+	Void insert(ptr_c8 key, ptr_Void binding)
 	{
 		i32 index = hash(key) % PB_HASH_TABLE_SIZE;
 		table[index] = Bucket(key, binding, table[index]);
 	}
 
-	ptr_Void lookup(ptr_c8 key, bucket* table[])
+	ptr_Void lookup(ptr_c8 key)
 	{
 		i32 index = hash(key) % PB_HASH_TABLE_SIZE;
 		bucket* b;
@@ -67,7 +69,7 @@ namespace PB::HASH
 	};
 
 
-	Void pop(ptr_c8 key, bucket* table[])
+	Void pop(ptr_c8 key)
 	{
 		int index = hash(key) % PB_HASH_TABLE_SIZE;
 		auto ptr = table[index];

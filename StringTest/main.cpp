@@ -2,6 +2,7 @@
 #include "pb_string.hpp"
 //#include "Windows.h"
 //#include "pb_memmory.hpp"
+#include "pb_hashtable.hpp"
 
 //Don't use it is Error prone! but in this test it is okey
 using namespace PB;
@@ -32,6 +33,17 @@ int main(int argc, char* argv[])
 	clear(t3);
 	clear(t0);
 	*/
+
+	STR::String t1(u8"FileIsFile");
+
+	bl test = HASH::cstr_compare("test", "test");
+	
+	HASH::insert("key1",&t1);
+
+	auto t2 = (STR::String*)HASH::lookup("key1");
+
+	clear(t1);
+	HASH::clear();
 
 	//RAM::allocate(40);
 }

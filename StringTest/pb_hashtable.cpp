@@ -24,7 +24,11 @@ namespace PB::HASH
 			++c1;
 			++c2;
 			++iter;
-			if (iter == l1) result = true;
+			if (iter == l1)
+			{
+				result = true; 
+				break;
+			}
 		}
 		c1 -= iter;
 		c2 -= iter;
@@ -75,5 +79,16 @@ namespace PB::HASH
 		auto ptr = table[index];
 		table[index] = table[index]->next;
 		RAM::clear(ptr);
+	}
+	bl clear()
+	{
+		for(i64 i = 0; i < PB_HASH_TABLE_SIZE; ++i )
+		{
+			if(table[i] != nullptr )
+			{
+				free(table[i]);
+			}
+		}
+		ret true;
 	}
 };

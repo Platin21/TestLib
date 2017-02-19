@@ -11,7 +11,7 @@ namespace PB::STR
    {
 	  String string{};
 
-	  string.ptr = memory_allocte_zero( to_append_on.lenght + to_append.lenght );
+	  string.ptr = RAM::allocate( to_append_on.lenght + to_append.lenght );
 	  string.data = (c8*)string.ptr;
 	  string.lenght = to_append_on.lenght + to_append.lenght;
 
@@ -33,7 +33,7 @@ namespace PB::STR
 				  String string{};
 				  i64 count = to_append.size();
 
-				  string.ptr = malloc( to_append_on.lenght + count );
+				  string.ptr = RAM::allocate( to_append_on.lenght + count );
 				  string.data = (c8*)string.ptr;
 				  string.lenght = to_append_on.lenght + count;
 
@@ -59,7 +59,7 @@ namespace PB::STR
 					 ++count;
 				  };
 
-				  string.ptr    = malloc(count+to_append_on.lenght);
+				  string.ptr    = RAM::allocate(count+to_append_on.lenght);
 				  string.data	= (c8*)string.ptr;
 				  string.lenght = count + to_append_on.lenght;
 
@@ -85,7 +85,7 @@ namespace PB::STR
 					 ++count;
 				  };
 
-				  string.ptr    = malloc(count+to_append_on.lenght);
+				  string.ptr    = RAM::allocate(count+to_append_on.lenght);
 				  string.data	= (c8*)string.ptr;
 				  string.lenght = count + to_append_on.lenght;
 
@@ -108,7 +108,7 @@ namespace PB::STR
 			   {
 				  String string{};
 
-				  string.ptr = malloc( to_append_on.lenght + to_append.lenght );
+				  string.ptr = RAM::allocate( to_append_on.lenght + to_append.lenght );
 				  string.data = (c8*)string.ptr;
 				  string.lenght = to_append_on.lenght + to_append.lenght;
 
@@ -128,7 +128,7 @@ namespace PB::STR
 				  String string{};
 				  i64 count = to_append.size();
 
-				  string.ptr = malloc( to_append_on.lenght + count );
+				  string.ptr = RAM::allocate( to_append_on.lenght + count );
 				  string.data = (c8*)string.ptr;
 				  string.lenght = to_append_on.lenght + count;
 
@@ -154,7 +154,7 @@ namespace PB::STR
 					 ++count;
 				  };
 
-				  string.ptr    = malloc(count+to_append_on.lenght);
+				  string.ptr    = RAM::allocate(count+to_append_on.lenght);
 				  string.data	= (c8*)string.ptr;
 				  string.lenght = count + to_append_on.lenght;
 
@@ -180,7 +180,7 @@ namespace PB::STR
 					 ++count;
 				  };
 
-				  string.ptr    = malloc(count+to_append_on.lenght);
+				  string.ptr    = RAM::allocate(count+to_append_on.lenght);
 				  string.data	= (c8*)string.ptr;
 				  string.lenght = count + to_append_on.lenght;
 
@@ -236,7 +236,7 @@ namespace PB::STR
 
    bl		   clear(String& to_clear )
    {
-	  free(to_clear.ptr);
+	  RAM::clear(to_clear.ptr);
 	  to_clear.ptr = nullptr;
 	  to_clear.data = nullptr;
 	  to_clear.lenght = 0;
@@ -253,7 +253,7 @@ namespace PB::STR
    //#INFO Keep in mind this is post increment ! 
    c8 * to_charptr(String to_convert)
    {
-	   c8* to_clear = (c8*)malloc(to_convert.lenght+1);
+	   c8* to_clear = (c8*)RAM::allocate(to_convert.lenght+1);
 	   for (i64 i = 0; i < to_convert.lenght; ++i)
 	   {
 		   *to_clear++ = *to_convert.data++;
@@ -274,7 +274,7 @@ namespace PB::STR
    String      copy(String to_copy)
 			   {
 				  String string{};
-				  string.ptr = malloc(to_copy.lenght);
+				  string.ptr = RAM::allocate(to_copy.lenght);
 				  string.data = (c8*)string.ptr;
 
 				  for(i64 i = 0; i < to_copy.lenght; ++i )
@@ -295,7 +295,7 @@ namespace PB::STR
 
 				  String string{};
 				  i64 size = end - start;
-				  string.ptr = memory_allocte_zero(size);
+				  string.ptr = RAM::allocte_zero(size);
 				  string.data = (c8*) string.ptr;
 
 				  if(start != 0)

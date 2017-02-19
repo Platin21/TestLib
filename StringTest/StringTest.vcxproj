@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="pb_defines.h" />
     <ClInclude Include="pb_hashtable.hpp" />
     <ClInclude Include="pb_memmory.hpp" />
     <ClInclude Include="pb_string.hpp" />

@@ -46,7 +46,7 @@ namespace PB::STR
 			   ++count;
 		   };
 		    
-		   this->ptr = memory_allocte_zero(count);
+		   this->ptr = RAM::allocate(count);
 		   this->data = (c8*) this->ptr;
 
 		   text -= count;
@@ -68,7 +68,7 @@ namespace PB::STR
 			   ++count;
 		   };
 
-		   this->ptr = memory_allocte_zero(count);
+		   this->ptr = RAM::allocate(count);
 		   this->data = (c8*) this->ptr;
 
 		   text -= count;
@@ -84,7 +84,7 @@ namespace PB::STR
 	   String(char* text,i64 size)
 	   {
 		   this->lenght = size;
-		   this->ptr = memory_allocte_zero(size);
+		   this->ptr = RAM::allocate(size);
 		   this->data = (c8*)this->ptr;
 		   
 	   	   for (i64 i = 0; i < size; ++i)

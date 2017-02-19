@@ -6,44 +6,33 @@
 
 //Don't use it is Error prone! but in this test it is okey
 using namespace PB;
+using namespace STR;
 
 int main(int argc, char* argv[])
 {
-	/*
-	char* t = "test";
 	
-	String t0 = String(argv[0],50);
+	RAM::Pool_Amount(PB_MEMORY_POOL_SIZE * 16);
 
-	String t1(u8"aäbcdfghijklnmoöpqrsßtuüvwxyz");
-	String t2 = right(t1,5);
-	String t3 = left(t1,5);
+	ptr_i64 num = (ptr_i64)RAM::Pool_New(sizeof(i64)*2);
+	
+	*num = 455;
+	num++;
+	*num = 66;
 
-	LPDWORD written{};
-	SetConsoleOutputCP(CP_UTF8);
-	WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), t1.data, t1.lenght, written, NULL);
-	WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), "\n", 1, written, NULL);
-	WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), t2.data, t2.lenght, written, NULL);
-	WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE),"\n",1, written, NULL);
-	WriteConsoleA(GetStdHandle(STD_OUTPUT_HANDLE), t3.data, t3.lenght, written, NULL);
+	num--;
 
-	i8 t4 = 0;
+	ptr_c8 cc = (ptr_c8)RAM::Pool_New(sizeof(c8) * 4);
+
+	std::cout << *num++ << " " << *num << std::endl;
+
+	
+
+	String t1(u8"FileIsFile");
 
 	clear(t1);
-	clear(t2);
-	clear(t3);
-	clear(t0);
-	*/
-
-	STR::String t1(u8"FileIsFile");
 
 
-	HASH::insert("test", &t1);
-	HASH::insert("test2", &t1);
-	HASH::insert("test3", &t1);
-
-	HASH::clear();
-	STR::clear(t1);
-
+	RAM::Pool_clear();
 
 	ret 0;
 }

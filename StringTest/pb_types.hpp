@@ -2,8 +2,8 @@
 #include <string>
 #include <stdlib.h>
 
-//Special Defines
-#define	ret return
+#include "pb_defines.h"
+
 
 //Build namespace
 namespace PB
@@ -109,23 +109,6 @@ namespace PB
 
 //TODO Add defines to there own File because this here is a mess
 
-//The size of an singel memmory pool 16MB!
-#define PB_MEMMORY_POOL_SIZE = 16000000;
-
-//TODO @PLATFORM!
-#define PB_MEMMORY_POOL_OFFSET = 64;
-
-		extern ptr_Void POOL;
-		ptr_Void memory_allocte_zero(i64 size);
-
-		ptr_Void memory_allocte(i64 size);
-
-		ptr_Void advance_by(ptr_c8& ptr, r_i64 bytes);
-		ptr_Void regess_by(ptr_c8& ptr, r_i64 bytes);
-
-		//TODO Implement this !
-		ptr_Void Memmory_Pool();
-		ptr_Void Memmory_Pool_New(i64 size);
 	//]
 }
 

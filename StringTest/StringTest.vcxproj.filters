@@ -27,6 +27,9 @@
     <ClInclude Include="pb_hashtable.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="pb_defines.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pb_string.cpp">

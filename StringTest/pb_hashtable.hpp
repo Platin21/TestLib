@@ -1,3 +1,4 @@
+/* #TODO make a better one
 #pragma once
 #include "pb_types.hpp"
 #include "pb_string.hpp"
@@ -36,5 +37,4 @@ namespace PB::HASH
 
 	void clear();
 };
-
-
+*/

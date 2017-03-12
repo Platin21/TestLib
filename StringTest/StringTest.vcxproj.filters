@@ -27,7 +27,10 @@
     <ClInclude Include="pb_hashtable.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="pb_defines.h">
+    <ClInclude Include="pb_defines.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="pb_cstring.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -45,6 +48,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="pb_hashtable.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="pb_cstring.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

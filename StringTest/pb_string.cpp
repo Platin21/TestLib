@@ -6,7 +6,7 @@ namespace PB::STR
 {
 
    //Keep Copying at least from bottom !
-   // and its done! @NOTE Test if it works whit std::string !
+   // and its done! #NOTE Test if it works whit std::string !
    String	   apppend_back(String& to_append_on,String to_append)
    {
 	  String string{};
@@ -198,6 +198,7 @@ namespace PB::STR
 			   }
 				
 			   //#TODO Find a better algo
+			   //#NOTE Think taht this is the Fastest
    bl		   search(String searchin,String tosearch)
 			   {
 				  if(tosearch.lenght > searchin.lenght)
@@ -243,8 +244,8 @@ namespace PB::STR
 	  ret true;
    }
 
-   // I don't no how we should do this or if we should do this
-   //i64		   getCodePoints(String to_getPoints);
+   //#NOTE I don't no how we should do this or if we should do this
+   //i64		   getCodePoints(String to_getPoints){  };
 
 
 

@@ -139,7 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="pb_defines.h" />
+    <ClInclude Include="pb_cstring.hpp" />
+    <ClInclude Include="pb_defines.hpp" />
     <ClInclude Include="pb_hashtable.hpp" />
     <ClInclude Include="pb_memmory.hpp" />
     <ClInclude Include="pb_string.hpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pb_cstring.cpp" />
     <ClCompile Include="pb_hashtable.cpp" />
     <ClCompile Include="pb_memmory.cpp" />
     <ClCompile Include="pb_string.cpp" />

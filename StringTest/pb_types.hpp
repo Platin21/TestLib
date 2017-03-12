@@ -2,7 +2,8 @@
 #include <string>
 #include <stdlib.h>
 
-#include "pb_defines.h"
+// ReSharper disable once CppUnusedIncludeDirective
+#include "pb_defines.hpp"
 
 
 //Build namespace
@@ -92,10 +93,6 @@ namespace PB
 	//Boolean Value
 	//[
 		using bl = bool;
-
-		//TODO Check if bool is the same size on every platform!
-		//#define  true  = 1;
-		//#define  false = 0;
 	//]
 
 	//Enums for Diffrent Things
@@ -103,13 +100,6 @@ namespace PB
 	//Structs for Diffrent Things
 	 // Maybe add some things to this Section?
 	
-	//TODO Add these to there own file
-	//Memmory Things 
-	//[
-
-//TODO Add defines to there own File because this here is a mess
-
-	//]
 }
 
 //Alpha Namespace

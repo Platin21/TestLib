@@ -4,14 +4,15 @@
 
 //#INFO These are some headers of the Std Lib wich we need for conversion to std::string
 #include <string>
+// ReSharper disable once CppUnusedIncludeDirective
 #include <iostream>
 
 
-//TODO Use allocater from pb_types.hpp and use pool!
+//TODO Use allocater from pb_memmory.hpp and use pool!
 
 namespace PB::STR 
 {
-
+	//#TODO Remove ?
 	enum Charackters
 	{
 		WhiteSpace,
@@ -21,7 +22,6 @@ namespace PB::STR
 		Alpha,
 		Symbols,
 		Operators,
-		//#TODO Add more charackter sets!
 	};
 
    struct String
@@ -138,7 +138,6 @@ namespace PB::STR
    String      copy(String to_copy);
    String	   substr(String for_substr,i64 start,i64 end);
 
-   //@TODO Add this to the *.cpp file
    String	   left(String string,i64 count);
    String	   right(String string,i64 count);
 
@@ -153,7 +152,7 @@ namespace PB::STR
 
    bl		   compare(String com1, String com2);
    
-
+   //#TODO Remove ?
    String      remove(Charackters charackterset, String string);
 }
 

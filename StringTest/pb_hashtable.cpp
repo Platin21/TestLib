@@ -90,7 +90,7 @@ namespace PB::HASH
 	}
 
 
-	//#TODO Fix Free of the Hashtable!
+	//#TODO Fix Free of the Hashtable! (Pool!)
 	void clear()
 	{
 		bucket *b1;

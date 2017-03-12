@@ -10,29 +10,28 @@ using namespace STR;
 
 int main(int argc, char* argv[])
 {
+	RAM::Area pool;
+	RAM::Pool(pool);
+	//ptr_i64 num = (ptr_i64)RAM::Pool_New(8,pool);
 	
-	RAM::Pool_Amount(PB_MEMORY_POOL_SIZE * 16);
+	//*num = 455;
+	//num++;
+	//*num = 66;
 
-	ptr_i64 num = (ptr_i64)RAM::Pool_New(sizeof(i64)*2);
-	
-	*num = 455;
-	num++;
-	*num = 66;
+	//num--;
 
-	num--;
+	//ptr_c8 cc = (ptr_c8)RAM::Pool_New(sizeof(c8) * 4,pool);
 
-	ptr_c8 cc = (ptr_c8)RAM::Pool_New(sizeof(c8) * 4);
-
-	std::cout << *num++ << " " << *num << std::endl;
+	//std::cout << *num++ << " " << *num << std::endl;
 
 	
 
 	String t1(u8"FileIsFile");
+	String t2(u8"rtzwsFile");
 
 	clear(t1);
-
-
-	RAM::Pool_clear();
+	clear(t2);
+	RAM::Pool_clear(pool);
 
 	ret 0;
 }
